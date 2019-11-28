@@ -1,16 +1,20 @@
 #include <iostream>//头文件是一种预处理操作：在被编译之前，替换或者添加文本
 int main()
 {
-    using namespace std;//可以放到里面，编译指令，名称空间
+    //using namespace std;//可以放到里面，编译指令，名称空间
     //C++的输入输出必须有iostresm头文件和上面的编译指令
     //cout和cin是在std空间里面的，所以当没有写这个命名空间的时候应该把两者写全
     //std::cout<<"hello world"<<std::endl;
-    
+
+    //如果只想让cout能用而endl不能用的时候，可以用using 来实现
+
+    using std::cout;
+
     cout<<"hello world";
-    cout<<endl;
-    cout<<"hello world"<<endl;
-    
-    
-    cin.get();//可以等待直到输入字符，有防止直接关掉结果的作用
+    cout<< std::endl;
+    cout<<"hello world"<<std::endl;
+
+
+    std::cin.get();//可以等待直到输入字符，有防止直接关掉结果的作用
     return 0;
 }
